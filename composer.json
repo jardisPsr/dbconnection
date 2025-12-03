@@ -1,0 +1,41 @@
+{
+  "name": "jardispsr/dbconnection",
+  "version": "1.0.0",
+  "description": "This package provides dbconnection interfaces for a domain driven design approach",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Jardis Core Development",
+      "email": "jardisCore@headgent.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0.4",
+    "squizlabs/php_codesniffer": "^3.11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JardisPsr\\DbConnection\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo '#!/usr/bin/env bash' > .git/hooks/pre-commit",
+      "echo 'bash ./support/pre-commit-hook.sh' >> .git/hooks/pre-commit",
+      "chmod +x .git/hooks/pre-commit"
+    ]
+  },
+  "homepage": "https://github.com/JardisPsr/dbconnection",
+  "support": {
+    "issues": "https://github.com/JardisPsr/dbconnection/issues",
+    "email": "jardisCore@headgent.dev"
+  },
+  "keywords": ["database", "connection" ,"interfaces", "JardisPsr", "Headgent", "DDD"]
+}
